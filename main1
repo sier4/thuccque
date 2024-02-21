@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Game</h2>
+
+<p>Enter your username:</p>
+
+<input type="text" id="username" name="username">
+<button onclick="addUser()">Submit</button>
+
+<button onclick="startGame()">Start Game</button>
+
+<p id="game"></p>
+
+<script>
+var users = [];
+var objects = ['apple', 'banana', 'cherry'];
+
+function addUser() {
+  var username = document.getElementById("username").value;
+  users.push(username);
+  document.getElementById("username").value = "";
+}
+
+function startGame() {
+  var game = document.getElementById("game");
+  game.innerHTML = "";
+
+  for (var i = 0; i < users.length; i++) {
+    var nextUser = users[(i + 1) % users.length];
+    var randomObject = objects[Math.floor(Math.random() * objects.length)];
+
+    game.innerHTML += users[i] + " gets " + nextUser + " and a " + randomObject + "<br>";
+  }
+}
+</script>
+
+</body>
+</html>
