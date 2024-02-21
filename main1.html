@@ -11,6 +11,8 @@
 
 <button onclick="startGame()">Start Game</button>
 
+<p id="usersList"></p>
+
 <p id="game"></p>
 
 <script>
@@ -21,6 +23,9 @@ function addUser() {
   var username = document.getElementById("username").value;
   users.push(username);
   document.getElementById("username").value = "";
+
+  var usersList = document.getElementById("users");
+  usersList.innerHTML += username + "<br>";
 }
 
 function startGame() {
@@ -33,6 +38,7 @@ function startGame() {
 
     game.innerHTML += users[i] + " gets " + nextUser + " and a " + randomObject + "<br>";
   }
+  users.innerHTML = "";
 }
 </script>
 
