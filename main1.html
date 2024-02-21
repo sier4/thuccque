@@ -10,8 +10,9 @@
 <button onclick="addUser()">Submit</button>
 
 <button onclick="startGame()">Start Game</button>
+<button onclick="restGame()">Reset</button>
 
-<p id="usersList"></p>
+<p id="users"></p>
 
 <p id="game"></p>
 
@@ -39,6 +40,10 @@ function startGame() {
     game.innerHTML += users[i] + " gets " + nextUser + " and a " + randomObject + "<br>";
   }
   users.innerHTML = "";
+}
+
+function resetGame() {
+  document.getElementByID("users").value= "";
 }
 </script>
 
