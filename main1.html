@@ -10,7 +10,7 @@
 <button onclick="addUser()">Submit</button>
 
 <button onclick="startGame()">Start Game</button>
-<button onclick="restGame()">Reset</button>
+<button onclick="resetGame()">Reset</button>
 
 <p id="users"></p>
 
@@ -43,7 +43,14 @@ function startGame() {
 }
 
 function resetGame() {
-  document.getElementByID("users").value= "";
+  // Clear the users array
+  users = [];
+
+  // Clear the input field
+  document.getElementById("username").value = "";
+
+  // Clear the displayed list of users
+  document.getElementById("users").innerHTML = "";
 }
 </script>
 
